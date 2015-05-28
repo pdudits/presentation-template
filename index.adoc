@@ -1,0 +1,8 @@
+= Presentation title
+Author
+:idprefix:
+:revealjs_history: true
+:revealjs_transition: fade
+:source-highlighter: coderay
+
+== Let's get started

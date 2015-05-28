@@ -1,0 +1,10 @@
+== Building the presentation
+
+  bundler install --path vendor
+  bundler exec guard
+
+Go to http://localhost:35729/index.html
+
+Concerning :idprefix: attribute see (accented characters break links)
+* https://github.com/asciidoctor/asciidoctor-reveal.js/issues/32
+* https://github.com/hakimel/reveal.js/issues/1230
