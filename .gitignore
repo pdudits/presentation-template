@@ -1,5 +1,6 @@
 Gemfile.lock
 vendor/
 .bundle/
+theme/*.css
+.sass-cache/
 *.html
-
