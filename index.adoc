@@ -1,8 +1,59 @@
-= Presentation title
-Author
+= Get to know your application with graph database
+Patrik Duditš, @pdudits
 :idprefix:
+:revealjs_customtheme: theme/white.css
 :revealjs_history: true
 :revealjs_transition: fade
-:source-highlighter: coderay
+:source-highlighter: highlightjs
 
-== Let's get started
+== How large is your application?
+
+[.fragment]
+Java EE application with over 5000 classes
+
+== Answer this
+
+Which message driven beans depend on singletons?
+
+[.fragment]
+That contain a map?
+
+== {sp}
+
+[source,java]
+----
+@MessageDriven
+public class Processor {
+  @EJB
+  FooService service;
+
+  public void onMessage(Message m) {
+
+  }
+}
+
+@Singleton
+public class FooService {
+  Map<Input, CachedValue> cache;
+}
+----
+
+== How would you do that in your IDE?
+
+[.fragment]
+* Go to definition
+* Go to implementation
+* Find usages
+
+== structgraph
+Your application's structure in graph database
+
+== Ingredients
+
+[%step]
+* Cypher: neo4j's powerful graph query and modification language
+* Bytecode: only open API to your application structure
+
+== Neo4j data model
+
+image::neo4j-data-model-umlet.svg[]
