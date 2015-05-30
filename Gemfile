@@ -6,6 +6,7 @@ gem 'slim', '~> 3.0.0'
 gem 'coderay'
 
 gem 'guard'
+gem 'guard-sass'
 gem 'guard-shell'
 gem 'guard-livereload'
 gem 'yajl-ruby'
