@@ -54,6 +54,68 @@ Your application's structure in graph database
 * Cypher: neo4j's powerful graph query and modification language
 * Bytecode: only open API to your application structure
 
+== Function
+* source
+** Walk over jar (ear, war) files and look for class files
+* read
+** Read the class file with ASM, extract the information
+* sink
+** Store the information, into neo4j
+
+== What is extracted
+* Types
+** Inheritance, Annotations
+* Fields
+** Types, Annotations, Type Parameters
+* Methods
+** Annotations, Invocations of other methods
+** Fields method is invoked upon
+
 == Neo4j data model
 
 image::neo4j-data-model-umlet.svg[]
+
+== Graph scheme
+
+(without additional data)
+
+== Simple queries
+
+----
+MATCH (c:Class)-[:hasMethod]->(m:Method)
+WHERE m.simpleName = 'toString()'
+RETURN c,m
+----
+
+== Reading class data
+
+== ClassVisitor, FieldVisitor
+
+== AnnotationVisitor
+
+== Nested annotations
+
+== Annotation based queries
+
+Destinations of message driven beans
+
+Entity Graph
+
+== Modifying data with Neo4j
+
+linkImplementations
+
+== Method invocations
+
+Invocations in JVM
+AnalyzerVisitor, finding fields
+
+== Virtual calls
+
+== Virtual calls query
+
+== Structgraph status
+
+== Future directions
+
+== You're welcome to help
