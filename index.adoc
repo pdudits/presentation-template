@@ -55,21 +55,19 @@ Your application's structure in graph database
 * Bytecode: only open API to your application structure
 
 == Function
-* source
-** Walk over jar (ear, war) files and look for class files
-* read
-** Read the class file with ASM, extract the information
-* sink
-** Store the information, into neo4j
+
+source:: Walk over jar (ear, war) files and look for class files
+collect:: Read the class file with ASM, extract the information
+sink:: Store the information into neo4j
 
 == What is extracted
-* Types
-** Inheritance, Annotations
-* Fields
-** Types, Annotations, Type Parameters
-* Methods
-** Annotations, Invocations of other methods
-** Fields method is invoked upon
+Types::
+ * Inheritance, Annotations
+Fields::
+ * Types, Annotations, Type Parameters
+Methods::
+ * Annotations, Invocations of other methods
+ * Fields method is invoked upon
 
 == Neo4j data model
 
@@ -77,17 +75,35 @@ image::neo4j-data-model-umlet.svg[]
 
 == Graph scheme
 
-(without additional data)
+image::structgraph-basic-model.svg[]
 
 == Simple queries
 
+All methods called save
+[source,cypher]
 ----
 MATCH (c:Class)-[:hasMethod]->(m:Method)
-WHERE m.simpleName = 'toString()'
+WHERE m.methodName = 'save'
 RETURN c,m
 ----
 
-== Reading class data
+Syntax in detail in
+http://neo4j.com/docs/stable/cypher-refcard/[Cypher RefCard]
+and
+http://neo4j.com/docs/stable/cypher-query-lang.html[Cypher Reference]
+
+== Options for reading class data
+
+java.lang.reflect: Java reflection:: Runtime - needs linking
+javax.lang.model: Annotation processing:: Compile - needs all dependencies
+
+[.fragment]
+No method callgraphs!
+
+== Options for reading class data
+
+Java parser: Eclipse JDT:: Needs to cope with project structure
+Java bytecode: ASM:: Unified structure, includes generated artifacts
 
 == ClassVisitor, FieldVisitor
 
