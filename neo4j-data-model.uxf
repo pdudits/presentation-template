@@ -9,7 +9,8 @@
       <w>100</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>Node</panel_attributes>
+    <panel_attributes>Node
+bg=white</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -22,7 +23,8 @@
     </coordinates>
     <panel_attributes>Label
 --
-name:String</panel_attributes>
+name:String
+bg=white</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -36,7 +38,8 @@ name:String</panel_attributes>
     <panel_attributes>Property
 --
 name:String
-value:Object</panel_attributes>
+value:Object
+bg=white</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -47,7 +50,8 @@ value:Object</panel_attributes>
       <w>230</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=white</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;210.0;50.0;210.0;80.0</additional_attributes>
   </element>
   <element>
@@ -58,7 +62,8 @@ value:Object</panel_attributes>
       <w>130</w>
       <h>50</h>
     </coordinates>
-    <panel_attributes>Relationship</panel_attributes>
+    <panel_attributes>Relationship
+bg=white</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -109,7 +114,8 @@ m2=n</panel_attributes>
     <panel_attributes>Relationship
 Type
 --
-name:String</panel_attributes>
+name:String
+bg=white</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -124,5 +130,17 @@ name:String</panel_attributes>
 m1=m
 m2=n</panel_attributes>
     <additional_attributes>10.0;10.0;140.0;10.0;140.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>90</y>
+      <w>40</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+bg=white</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
 </diagram>

@@ -10,7 +10,9 @@
       <h>80</h>
     </coordinates>
     <panel_attributes>bg=white
-Class</panel_attributes>
+Class
+--
+name &lt;&lt;PK&gt;&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -58,7 +60,9 @@ Invocation</panel_attributes>
       <h>60</h>
     </coordinates>
     <panel_attributes>bg=white
-Method</panel_attributes>
+Method
+--
+name &lt;&lt;PK&gt;&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
