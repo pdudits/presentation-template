@@ -166,10 +166,12 @@ return mdb,sgRef,t,sg
 == Call graph
 
 Where are transaction created in this business method?
+
 [source, cypher]
 ----
-match p=(m:Method{simpleName:"CPBIProcessingScheduler#process()V"})
-        -[:invokes|overriden*..14]->(m2)<-[:hasMethod]-(c:Class)
+match p=(m:Method{name:"com.rwe.icon.si.cr.schedule."+
+        "CPBIProcessingScheduler#process()V"})
+        -[:invokes|overriden*..14]->(m2{public:true})<-[:hasMethod]-(c:Class)
 where (m2:TransactionAttribute and
        m2.TransactionAttribute="REQUIRES_NEW") or
       (c:TransactionAttribute and
@@ -380,7 +382,8 @@ create m-[:replaceBy]->superMethod
 
 == Structgraph status
 
-* To be open sourced soon
+* https://github.com/structgraph/structgraph
+* GPL Licensed
 * Plan to support own practical needs, and accept contributions
 
 == Future directions
